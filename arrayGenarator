@@ -1,0 +1,40 @@
+import java.util.Scanner;
+import java.util.Random;
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        Random rand = new Random();
+        System.out.print("enter number of row for your array : ");
+        int row = input.nextInt();
+        System.out.println();
+        System.out.print("enter number of column for your array : ");
+        int column = input.nextInt();
+        System.out.println();
+        System.out.print("enter lower range of random number for your array element: ");
+        int lower_range = input.nextInt();
+        System.out.print("enter upper range of random number for your array element: ");
+        int upper_range = input.nextInt();
+        int test_array[][] = new int[row][column];
+        for (int i=0; i< test_array.length; i++){
+            for (int j=0; j<test_array[i].length; j++){
+//                System.out.printf("Enter a Value for array[%d][%d] : ",i,j);
+//                test_array[i][j]=input.nextInt();
+                int random_element = rand.nextInt(upper_range-lower_range+1)+lower_range;
+                test_array[i][j]=random_element;
+
+            }
+        }
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println("Your Final 2D Array is : ");
+        for (int x=0; x< test_array.length; x++){
+            for (int y=0;y<test_array[x].length; y++){
+                System.out.print(test_array[x][y]+" ");
+            }
+            System.out.println();
+        }
+
+    }
+}
